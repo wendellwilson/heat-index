@@ -1,0 +1,6 @@
+Data from https://www.ncei.noaa.gov/pub/data/uscrn/products/subhourly01
+Using the data/txt_csv script to convert into csv and then importing into db using Oracle SQL Developer
+You can then use the HEATINDEXPACKAGE (heat_index.sql) to roll up subhourly data into hourly heat index data on a given day
+Note: 
+1. These values are currently calculated slightly incorrectly as the timestamp for the end of the hour is actually the beginning of the next hour and the end of the day is 0000 of the next day. The complexity of including these values correctly put it out of the scope of the project
+2. There are several adjustments of the heat index approximation not taken into account by the current function https://www.wpc.ncep.noaa.gov/html/heatindex_equation.shtml
