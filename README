@@ -2,9 +2,9 @@ Data from https://www.ncei.noaa.gov/pub/data/uscrn/products/subhourly01
 
 All necissary tables are defined in sql/tables.sql
 
-Using the data/txt_csv script to convert into csv and then importing into db using Oracle SQL Developer
+Using the data/txt_csv script convert whitespace delimited text file into csv and then importing into db using Oracle SQL Developer (default setting, but removing headers should work)
 
-You can then use the HEATINDEXPACKAGE (sql/heat_index.sql) to roll up subhourly data into hourly heat index data on a given day
+You can then use the HIPACKAGE (sql/heat_index.sql) to roll up subhourly data into hourly heat index data on a given day using ROLLUPHOURSHI(station, date). Date format is YYYYMMDD. Results are in the hourly_heat_index table.
 
 Note: 
 1. These values are currently calculated slightly incorrectly as the timestamp for the end of the hour is actually the beginning of the next hour and the end of the day is 0000 of the next day. The complexity of including these values correctly put it out of the scope of the project
